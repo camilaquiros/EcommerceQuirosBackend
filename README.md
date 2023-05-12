@@ -48,10 +48,9 @@ Link al repositorio de Github con el proyecto completo, sin la carpeta de Node_m
 
 
 
-|Checklist  Pre- entrega|			
-| ------ | ------ |	
+*Checklist  Pre- entrega		
 |Consigna|	Desarrollar el servidor basado en Node.JS y express, que escuche en el puerto 8080 y disponga de dos grupos de rutas: /products y /carts. Dichos endpoints estarán implementados con el router de express|			
-        
+| ------ | ------ |	       
 |Aspectos a evaluar|	Descripción	|
 | ------ | ------ |
 |Productos|	"En los edpoints que corresponden los productos: se crean correctamente, se visualizan y actualizan de manera óptima y se eliminan correctamente.|
