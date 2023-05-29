@@ -1,0 +1,70 @@
+import { Router } from "express";
+import CartManager from "../CartManager.js";
+import { promises } from 'fs';
+
+const router = Router();
+
+// Crear nueva instancia de la clase
+const cartManager = new CartManager('./database/cart.json')
+
+
+//Agrega un producto al carrito 
+router.post('/', async (req, res) => {
+    const cart = await cartManager.getCart();
+    const {product} = req.body;
+    let quantity = 1;
+    const id = cart.length + 1;
+    const productArray = { id, products: [{product, quantity}] }
+    cart.push(productArray);
+    promises.writeFile('./database/cart.json',JSON.stringify(cart, null, '\t'))
+    res.status(201).json(cart);
+})
+
+router.get('/', async (req, res) => {
+    const cart = await cartManager.getCart();
+    res.send(cart);
+
+});
+
+//Mostrar carrito según id
+router.get('/:cid', async (req, res) => {
+    const {cid} = req.params;
+    const cart = await cartManager.getCart();
+    const cartId = cart.find((product) => product.id == cid);
+    if(cartId) return res.send(cartId.products); 
+    else res.status(404).send('Carrito no encontrado');
+});
+
+
+router.post('/:cid/product/:pid', async (req, res) => {
+    const {cid} = req.params;
+    const {pid} = req.params;
+    const cart = await cartManager.getCart();
+    const {product} = req.body;
+    let quantity = 1;
+    const newProduct = {product, quantity};
+    const cartId = cart.find((c) => c.id == cid);
+    if(cartId){
+        const productId = cartId.products.find((p) => p.product == pid);
+        if(productId){
+            const newArray = cartId.products.filter((search) => search.product != pid)
+            newProduct.quantity = newProduct.quantity + productId.
+            quantity;
+            newArray.push(newProduct);
+            cartId.products = newArray
+            promises.writeFile('./database/cart.json',JSON.stringify(cart, null, '\t'))
+            res.status(201).json(cartId.products);
+            console.log(newProduct)
+        } else {
+            cartId.products.push(newProduct);
+            promises.writeFile('./database/cart.json',JSON.stringify(cart, null, '\t'))
+            res.status(201).json(cartId.products);
+            console.log('dos')
+        }
+    }else {
+        res.status(404).send('Carrito no encontrado');
+    }
+});
+
+
+export default router;

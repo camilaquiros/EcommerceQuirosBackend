@@ -48,15 +48,15 @@ Link al repositorio de Github con el proyecto completo, sin la carpeta de Node_m
 
 
 
-# Checklist  Pre- entrega		
+# **Checklist  Pre- entrega**		
      
 |Aspectos a evaluar|	Descripción	|
 | ------ | ------ |
-|Consigna|	Desarrollar el servidor basado en Node.JS y express, que escuche en el puerto 8080 y disponga de dos grupos de rutas: /products y /carts. Dichos endpoints estarán implementados con el router de express|	
-|Productos|	"En los edpoints que corresponden los productos: se crean correctamente, se visualizan y actualizan de manera óptima y se eliminan correctamente.|
+|Consigna|	Desarrollar el servidor basado en Node.JS y express, que escuche en el puerto 8080 y disponga de dos grupos de rutas: /products y /carts. Dichos endpoints estarán implementados con el router de express.|	
+|Productos|	En los endpoints que corresponden los productos: se crean correctamente, se visualizan y actualizan de manera óptima y se eliminan correctamente.|
 |Carrito|	El carrito se crea vacío. Además, agrega solo el id del producto y elimina correctamente los productos.	|
-|Seguridad	|El servidor devuelve error si: se trata de crear el mismo producto dos veces (a partir del código repetido) y si se agrega un producto inexistente al carrito |
-|Operación y formato|	El formato de productos y carrito es en inglés. El proyecto corre con npm start	|
+|Seguridad	|El servidor devuelve error si: se trata de crear el mismo producto dos veces (a partir del código repetido) y si se agrega un producto inexistente al carrito. |
+|Operación y formato|	El formato de productos y carrito es en inglés. El proyecto corre con npm start.	|
 
 
 
