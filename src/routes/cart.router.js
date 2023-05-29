@@ -20,11 +20,6 @@ router.post('/', async (req, res) => {
     res.status(201).json(cart);
 })
 
-router.get('/', async (req, res) => {
-    const cart = await cartManager.getCart();
-    res.send(cart);
-
-});
 
 //Mostrar carrito según id
 router.get('/:cid', async (req, res) => {
@@ -36,6 +31,7 @@ router.get('/:cid', async (req, res) => {
 });
 
 
+//Agregar un producto al carrito o aumentar la cantidad del mismo si ya esta en el carrito. Req.body debe ser igual a pid o sino se rompe el json
 router.post('/:cid/product/:pid', async (req, res) => {
     const {cid} = req.params;
     const {pid} = req.params;
