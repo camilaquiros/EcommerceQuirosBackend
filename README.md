@@ -2,7 +2,8 @@
 
 Se desarrollará un servidor que contenga los endpoints y servicios necesarios para gestionar los productos y carritos de compra en el e-commerce
 
-# LINK POSTMAN: https://ecommerce-quiros-backend.postman.co/workspace/Team-Workspace~0300c271-9f56-4340-836b-bd59534449a8/collection/12544425-beb9c66a-acc3-498b-bf12-d33f2ff04753?action=share&creator=12544425
+# LINK POSTMAN: 
+https://ecommerce-quiros-backend.postman.co/workspace/Team-Workspace~0300c271-9f56-4340-836b-bd59534449a8/collection/12544425-beb9c66a-acc3-498b-bf12-d33f2ff04753?action=share&creator=12544425
 
 ## Se debe entregar
 
