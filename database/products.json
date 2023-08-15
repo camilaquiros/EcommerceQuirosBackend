@@ -262,38 +262,5 @@
 		"stock": 10,
 		"category": "Esmaltes",
 		"thumbnails": "esmaltes/ILNPRadiant.jpg"
-	},
-	{
-		"id": 25,
-		"title": "PRUEBA POST",
-		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis repellat necessitatibus quidem mollitia enim nulla possimus, assumenda vitae esse pariatur voluptas, illo suscipit soluta temporibus autem facilis culpa? Eaque!",
-		"code": "ABC123",
-		"price": 10,
-		"status": true,
-		"stock": 10,
-		"category": "Esmaltes",
-		"thumbnails": "esmaltes/ILNPRadiant.jpg"
-	},
-	{
-		"id": 26,
-		"title": "PRUEBA PUT",
-		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis repellat necessitatibus quidem mollitia enim nulla possimus, assumenda vitae esse pariatur voluptas, illo suscipit soluta temporibus autem facilis culpa? Eaque!",
-		"code": "ABC123",
-		"price": 20,
-		"status": true,
-		"stock": 10,
-		"category": "Esmaltes",
-		"thumbnails": "esmaltes/ILNPRadiant.jpg"
-	},
-	{
-		"id": 27,
-		"title": "PRUEBA POST",
-		"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis repellat necessitatibus quidem mollitia enim nulla possimus, assumenda vitae esse pariatur voluptas, illo suscipit soluta temporibus autem facilis culpa? Eaque!",
-		"code": "ABC123",
-		"price": 10,
-		"status": true,
-		"stock": 10,
-		"category": "Esmaltes",
-		"thumbnails": "esmaltes/ILNPRadiant.jpg"
 	}
 ]

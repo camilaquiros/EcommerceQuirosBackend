@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "beb9c66a-acc3-498b-bf12-d33f2ff04753",
+		"name": "Ecommerce-Quiros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12544425",
+		"_collection_link": "https://ecommerce-quiros-backend.postman.co/workspace/0300c271-9f56-4340-836b-bd59534449a8/collection/12544425-beb9c66a-acc3-498b-bf12-d33f2ff04753?action=share&creator=12544425&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "api/products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/:pid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\t{\r\n\t\t\"title\": \"PRUEBA POST\",\r\n\t\t\"description\": \"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis repellat necessitatibus quidem mollitia enim nulla possimus, assumenda vitae esse pariatur voluptas, illo suscipit soluta temporibus autem facilis culpa? Eaque!\",\r\n\t\t\"code\": \"ABC125\",\r\n\t\t\"price\": 6,\r\n\t\t\"status\": true,\r\n\t\t\"stock\": 10,\r\n\t\t\"category\": \"Bases\",\r\n\t\t\"thumbnails\": \"bases/Elf.jpg\"\r\n\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/:pid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"PRUEBA PUT\",\r\n    \"description\": \"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis repellat necessitatibus quidem mollitia enim nulla possimus, assumenda vitae esse pariatur voluptas, illo suscipit soluta temporibus autem facilis culpa? Eaque!\",\r\n    \"code\": \"ABC123\",\r\n    \"price\": 20,\r\n    \"status\": true,\r\n    \"stock\": 10,\r\n    \"category\": \"Esmaltes\",\r\n    \"thumbnails\": \"esmaltes/ILNPRadiant.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/products/:pid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"26"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "api/cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/cart/:cid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/cart/:cid/product/:pid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/2/product/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"2",
+								"product",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
