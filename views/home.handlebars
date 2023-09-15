@@ -1,0 +1,9 @@
+<main>
+    <h1>LISTA DE PRODUCTOS</h1>
+    <ul>
+        {{#each products}}
+            <li>{{this.title}}: ${{this.price}}</li>
+            <br>
+        {{/each}}
+    </ul>
+</main>

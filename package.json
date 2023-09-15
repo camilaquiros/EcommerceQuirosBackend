@@ -1,7 +1,7 @@
 {
   "name": "ecommerce_quiros",
   "version": "1.0.0",
-  "description": "Se desarrollará un servidor que contenga los endpoints y servicios necesarios para gestionar los productos y carritos de compra en el e-commerce",
+  "description": "Deberás entregar el proyecto que has venido armando, cambiando persistencia en base de datos, además de agregar algunos endpoints nuevos a tu ecommerce.",
   "main": "./src/app.js",
   "type": "module",
   "scripts": {
@@ -20,6 +20,10 @@
   "homepage": "https://github.com/camilaquiros/EcommerceQuirosBackend#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "nodemon": "^2.0.22"
+    "express-handlebars": "^7.0.7",
+    "mongoose": "^7.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }

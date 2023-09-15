@@ -60,7 +60,7 @@ Deberás entregar el proyecto que has venido armando, cambiando persistencia en 
 - Además, agregar una vista en ‘/carts/:cid (cartId) para visualizar un carrito específico, donde se deberán listar SOLO los productos que pertenezcan a dicho carrito. 
 
 
-# **Checklist  Pre- entrega**		
+# **Checklist  Pre-entrega**		
      
 |Aspectos a evaluar|	Descripción	|
 | ------ | ------ |
