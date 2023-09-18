@@ -3,13 +3,36 @@ import { cartModel } from "../models/carts.models.js";
 
 const cartRouter = Router();
 
+//DELETE PRODUCTO DEL CARRITO
+cartRouter.delete('/:cid/products/:pid', async(req,res) => {
+    const { cid, pid } = req.params
+    try {
+        let cart = await cartModel.findById(cid);
+        if(cart){
+            const prod = cart.products.findIndex(prod => prod.id_prod == pid)
+            if(prod != -1){
+                cart.products.splice(prod, 1)
+                const respuesta = await cartModel.findByIdAndUpdate(cid, cart)
+                res.status(202).send({resultado: 'OK', message: respuesta});
+            } else{
+                res.status(404).send({resultado: 'Not Found', message: 'Este producto no se encuentra en el carrito'})
+            }
+        } else{
+            res.status(404).send({resultado: 'Not Found'})
+        }
+
+    } catch (error) {
+        res.status(500).send({error: `No se pudo eliminar producto con Mongoose: ${error}`})
+    }
+})
+
 //GET
 cartRouter.get('/:cid', async(req, res) => {
     const { cid } = req.params
     try {
-        const prods = await cartModel.findById(cid)
-        res.status(200).send({resultado: 'OK', message: prods})
-        console.log(products)
+            const prods = await cartModel.findById(cid)
+            res.status(200).send({resultado: 'OK', message: prods})
+
     } catch (error) {
         res.status(400).send({error: `No se pudo obtener carrito con Mongoose: ${error}`})
     }
@@ -22,74 +45,79 @@ cartRouter.post('/:cid/products/:pid', async(req, res) => {
     try {
         const cart = await cartModel.findById(cid)
         if(cart){
-            cart.products.push({id_prod: pid, quantity: quantity})
-            const respuesta = await cartModel.findByIdAndUpdate(cid, cart)
-            res.status(200).send({resultado: 'OK', message: respuesta});
+            const prod = cart.products.findIndex(prod => prod.id_prod == pid)
+            if(prod == -1) {
+                cart.products.push({id_prod: pid, quantity: quantity})
+                const respuesta = await cartModel.findByIdAndUpdate(cid, cart)
+                res.status(200).send({resultado: 'OK', message: respuesta});
+            } else {
+                res.status(404).send({resultado: 'Not Found', message: 'Este producto ya se encuentra en el carrito'})
+            }
+
         }
     } catch (error) {
         res.status(400).send({error: `No se pudo agregar producto al carrito: ${error}`})
     }
 })
 
-//PUT
-cartRouter.put('/:cid', async(req,res) => {
-    const { cid } = req.params
-    const {quantity} = req.body;
-    try {
-        let prod = await cartModel.findByIdAndUpdate(cid, {quantity});
-        if(prod){
-            res.status(202).send({resultado: 'OK', message: prod});
-        }else{
-            res.status(404).send({resultado: 'Not Found', message: prod})
-        }
+//PUT ARRAY DE PRODUCTOS
+// cartRouter.put('/:cid', async(req,res) => {
+//     const { cid } = req.params
+//     const {products} = req.body;
+//     try {
+//         const cart = await cartModel.findById(cid)
+//         if(cart){
+//             products.forEach(async product => {
+//                 const prod = cart.products.findIndex(prod => prod.id_prod == product.id_prod)
+//                 if(prod == -1) {
+//                     cart.products.push({id_prod: product.id_prod, quantity: quantity})
+//                     const respuesta = await cartModel.findByIdAndUpdate(cid, cart)
+//                     res.status(200).send({resultado: 'OK', message: respuesta});
+//                 } else {
+//                     res.status(404).send({resultado: 'Not Found', message: 'Este producto ya se encuentra en el carrito'})
+//                 }
+//             });
+//         }
         
-    } catch (error) {
-        res.status(500).send({error: `No se pudo actualizar producto con Mongoose: ${error}`})
-    }
-})
+//     } catch (error) {
+//         res.status(500).send({error: `No se pudo actualizar producto con Mongoose: ${error}`})
+//     }
+// })
 
 //PUT SOLO CANTIDAD
-cartRouter.put('api/carts/:cid/products/:pid', async(req,res) => {
+cartRouter.put('/:cid/products/:pid', async(req,res) => {
     const { cid, pid } = req.params
-    const {quantity} = req.body;
+    const { quantity } = req.body
     try {
-        let prod = await cartModel.findByIdAndUpdate(pid, {quantity});
-        if(prod){
-            res.status(202).send({resultado: 'OK', message: prod});
-        }else{
-            res.status(404).send({resultado: 'Not Found', message: prod})
+        const cart = await cartModel.findById(cid)
+        if(cart){
+            const prod = cart.products.findIndex(prod => prod.id_prod == pid)
+            if(prod != -1) {
+                cart.products[prod].quantity += quantity
+                const respuesta = await cartModel.findByIdAndUpdate(cid, cart)
+                res.status(200).send({resultado: 'OK', message: respuesta});
+            }else {
+                res.status(404).send({resultado: 'Not Found', message: 'Este producto no esta en el carrito'})
+            }
+
         }
-        
     } catch (error) {
-        res.status(500).send({error: `No se pudo actualizar producto con Mongoose: ${error}`})
+        res.status(400).send({error: `No se pudo agregar producto al carrito: ${error}`})
     }
 })
 
-//DELETE PRODUCTO DEL CARRITO
-cartRouter.delete('/:cid/products/:pid', async(req,res) => {
-    const { cid, pid } = req.params
-    try {
-        let prod = await cartModel.findByIdAndDelete(pid);
-        if(prod){
-            res.status(202).send({resultado: 'OK', message: prod});
-        }else{
-            res.status(404).send({resultado: 'Not Found', message: prod})
-        }
-        
-    } catch (error) {
-        res.status(500).send({error: `No se pudo eliminar producto con Mongoose: ${error}`})
-    }
-})
 
 //DELETE CARRITO ENTERO
 cartRouter.delete('/:cid', async(req,res) => {
     const { cid } = req.params
     try {
-        let prod = await cartModel.findByIdAndDelete(cid);
-        if(prod){
-            res.status(202).send({resultado: 'OK', message: prod});
+        let cart = await cartModel.findById(cid);
+        if(cart){
+            cart.products.splice(0, cart.products.length);
+            const respuesta = await cartModel.findByIdAndUpdate(cid, cart)
+            res.status(202).send({resultado: 'OK', message: respuesta});
         }else{
-            res.status(404).send({resultado: 'Not Found', message: prod})
+            res.status(404).send({resultado: 'Not Found', message: cart})
         }
         
     } catch (error) {

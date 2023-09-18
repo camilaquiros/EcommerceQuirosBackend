@@ -5,11 +5,16 @@ const productRouter = Router();
 
 //GET
 productRouter.get('/', async(req, res) => {
-    const {limit} = req.query;
+    const {query, limit, page, sort} = req.query;
     try {
-        const prods = await productModel.find().limit(limit?limit:10)
-        res.status(200).send({resultado: 'OK', message: prods})
-        console.log(products)
+        
+        if(limit != undefined){
+            const prods = await productModel.paginate({}, {limit, page, sort})
+            res.status(200).send({resultado: 'OK', message: prods});
+        } else {
+            const prods = await productModel.paginate({}, {limit: 10, page, sort})
+            res.status(200).send({resultado: 'OK', message: prods});
+        }
     } catch (error) {
         res.status(400).send({error: `No se pudo obtener productos con Mongoose: ${error}`})
     }

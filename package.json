@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/camilaquiros/EcommerceQuirosBackend#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
-    "mongoose": "^7.3.1"
+    "mongoose": "^7.3.1",
+    "mongoose-paginate-v2": "^1.7.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
