@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "beb9c66a-acc3-498b-bf12-d33f2ff04753",
+		"name": "Ecommerce-Quiros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12544425",
+		"_collection_link": "https://ecommerce-quiros-backend.postman.co/workspace/Team-Workspace~0300c271-9f56-4340-836b-bd59534449a8/collection/12544425-beb9c66a-acc3-498b-bf12-d33f2ff04753?action=share&source=collection_link&creator=12544425"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "api/products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "api/products con limit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products?limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/products con queries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products?limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "api/carts/:cid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/carts/65044859b9ff5276a5a5e46d"
+					},
+					"response": []
+				},
+				{
+					"name": "api/carts/:cid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/carts/65044859b9ff5276a5a5e46d"
+					},
+					"response": []
+				},
+				{
+					"name": "api/carts/:cid/product/:pid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/carts/65044859b9ff5276a5a5e46d/products/650419bc18dd5127a096704b"
+					},
+					"response": []
+				},
+				{
+					"name": "api/carts/:cid/product/:pid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/carts/65044859b9ff5276a5a5e46d/products/650419bc18dd5127a096704b"
+					},
+					"response": []
+				},
+				{
+					"name": "api/carts/:cid/product/:pid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/carts/65044859b9ff5276a5a5e46d/products/650419bc18dd5127a096704b"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
