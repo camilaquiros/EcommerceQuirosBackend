@@ -1,0 +1,14 @@
+<main>
+    <h1> Bienvenid@ {{first_name}} {{last_name}}, tu rol es: {{rol}}</h1>
+    <a href="/api/users/details">Ir a mi perfil</a>
+    <form action="/api/products" method="post">
+        <input type="submit" value="Logout">
+    </form>
+    <h2>LISTA DE PRODUCTOS</h2>
+    <ul>
+        {{#each products}}
+            <li>{{this.title}}: ${{this.price}}</li>
+            <br>
+        {{/each}}
+    </ul>
+</main>

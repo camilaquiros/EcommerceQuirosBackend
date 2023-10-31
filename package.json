@@ -1,29 +1,32 @@
 {
-  "name": "ecommerce_quiros",
+  "name": "desafio-05",
   "version": "1.0.0",
-  "description": "Deberás entregar el proyecto que has venido armando, cambiando persistencia en base de datos, además de agregar algunos endpoints nuevos a tu ecommerce.",
+  "description": "Ajustar nuestro servidor principal para trabajar con un sistema de login.",
   "main": "./src/app.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/camilaquiros/EcommerceQuirosBackend.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/camilaquiros/EcommerceQuirosBackend/issues"
-  },
-  "homepage": "https://github.com/camilaquiros/EcommerceQuirosBackend#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "commander": "^11.1.0",
+    "connect-mongo": "^5.0.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.3.1",
-    "mongoose-paginate-v2": "^1.7.4"
+    "mongoose-paginate-v2": "^1.7.4",
+    "passport": "^0.6.0",
+    "passport-github2": "^0.1.12",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
