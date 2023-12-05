@@ -18,16 +18,28 @@ let idProduct
 
 describe('Testing Aplicacion de Ecommerce', () => {
     describe('Test de carrito', () => {
-        it('Test endpoint /api/carts, se espera que muestre todos los productos del carrito', async function() {
-            const { _body } = await requester.get(`/api/carts/65320427a606189eb4002bc1`)
+        it('Test endpoint /api/users/register, se espera que registre un nuevo usuario', async function() {
+            const newUser = {
+                first_name: 'Pepe',
+                last_name: 'Perez',
+                email: 'pepe@perez',
+                password: 'JKDSAK5468dsf',
+                age: 26
+            }
+            const { ok, _body } = await requester.post('/api/users/register').send(newUser) //requester.método('contenido o no')
+            logger.info(ok)
             logger.info(JSON.stringify(_body))
-            idCart = _body.message._id
+            idCart = _body.cart
+        })
+        it('Test endpoint /api/carts, se espera que muestre todos los productos del carrito', async function() {
+            const { _body } = await requester.get(`/api/carts/${idCart}`)
+            logger.info(JSON.stringify(_body))
         })
         it('Test endpoint /api/products, se espera que genere un producto', async function() {
             const newProduct = {
                 title: 'corrector',
                 description: 'dsad',
-                code: 'kmdsaKFLSAKD254',
+                code: 'kmd4saKFLSAKD254',
                 price: '26',
                 status: 'true',
                 stock: '54',
