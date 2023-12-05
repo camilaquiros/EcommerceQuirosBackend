@@ -1,0 +1,147 @@
+{"level":"warn","message":"ALERTA"}
+warning: GET en /logger - function toLocaleTimeString() { [native code] }
+warning: GET en /logger - function toLocaleTimeString() { [native code] }
+fatal: Request GET - /logger - Date: 30/11/2023, 05:19:27
+warning: [30/11/2023, 05:44:14]: Logger warning
+warning: [30/11/2023, 05:45:08]: Logger warning
+warning: [30/11/2023, 05:46:26]: Logger warning
+warning: [30/11/2023, 05:46:38]: Logger warning
+warning: [30/11/2023, 05:46:59]: Logger warning
+warning: [30/11/2023, 05:48:36]: Logger warning
+warning: [30/11/2023, 05:49:37]: Logger warning
+warning: [30/11/2023, 05:50:11]: Logger warning
+warning: [30/11/2023, 05:53:14]: Logger warning
+fatal: [30/11/2023, 05:53:14]: Ocurrio un error Test error
+warning: [30/11/2023, 05:54:01]: Logger warning
+warning: [30/11/2023, 05:58:59]: Logger warning
+warning: [30/11/2023, 05:59:42]: Logger warning
+warning: [30/11/2023, 06:00:27]: Logger warning
+warning: [30/11/2023, 06:01:07]: Logger warning
+warning: [30/11/2023, 06:05:58]: Logger warning
+warning: [30/11/2023, 06:06:33]: Logger warning
+warning: [30/11/2023, 06:06:41]: Logger warning
+warning: [30/11/2023, 06:07:01]: Logger warning
+warning: [30/11/2023, 06:07:33]: Logger warning
+warning: [30/11/2023, 06:09:52]: Logger warning
+warning: [30/11/2023, 06:10:07]: Logger warning
+warning: [30/11/2023, 06:10:33]: Logger warning
+warning: [30/11/2023, 06:14:28]: Logger warning
+error: [30/11/2023, 06:14:28]: Ocurrio un error Test error
+warning: [30/11/2023, 06:14:59]: Logger warning
+error: [30/11/2023, 06:14:59]: Ocurrio un error Test error
+fatal: [30/11/2023, 06:14:59]: Logger fatal
+warning: [30/11/2023, 06:29:46]: Logger warning
+error: [30/11/2023, 06:29:46]: Ocurrio un error: Test error
+fatal: [30/11/2023, 06:29:46]: Logger fatal
+warning: [30/11/2023, 06:37:29]: Logger warning
+error: [30/11/2023, 06:37:29]: Ocurrio un error: Test error
+fatal: [30/11/2023, 06:37:29]: Logger fatal
+warning: [30/11/2023, 07:21:04]: Logger warning
+error: [30/11/2023, 07:21:04]: Ocurrio un error: Test error
+fatal: [30/11/2023, 07:21:04]: Logger fatal
+warning: [30/11/2023, 07:30:18]: Logger warning
+error: [30/11/2023, 07:30:18]: Ocurrio un error: Test error
+fatal: [30/11/2023, 07:30:18]: Logger fatal
+warning: [30/11/2023, 07:30:39]: Logger warning
+error: [30/11/2023, 07:30:39]: Ocurrio un error: Test error
+fatal: [30/11/2023, 07:30:39]: Logger fatal
+warning: [30/11/2023, 07:35:54]: Logger warning
+error: [30/11/2023, 07:35:54]: Ocurrio un error: Test error
+fatal: [30/11/2023, 07:35:54]: Logger fatal
+warning: [30/11/2023, 07:36:09]: Logger warning
+error: [30/11/2023, 07:36:09]: Ocurrio un error: Test error
+fatal: [30/11/2023, 07:36:09]: Logger fatal
+warning: [30/11/2023, 07:42:24]: Logger warning
+error: [30/11/2023, 07:42:24]: Ocurrio un error: Test error
+fatal: [30/11/2023, 07:42:24]: Logger fatal
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio Lorem ipfsdfssum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis repellat necessitatibus quidem mollitia enim nulla possimus, assumenda vitae esse pariatur voluptas, illo suscipit soluta temporibus autem facilis culpa? Eaque!
+    * code: necesita ser un string, se recibio ABC14NB5664gf
+    * price: necesita ser un numero, se recibio 2052
+    * stock: necesita ser un numero, se recibio 1565
+    * category: necesita ser un string, se recibio Basfdss
+    
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio Lorem ipfsdfssum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis repellat necessitatibus quidem mollitia enim nulla possimus, assumenda vitae esse pariatur voluptas, illo suscipit soluta temporibus autem facilis culpa? Eaque!
+    * code: necesita ser un string, se recibio ABC14NB5664gf
+    * price: necesita ser un numero, se recibio 2052
+    * stock: necesita ser un numero, se recibio 1565
+    * category: necesita ser un string, se recibio Basfdss
+    
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio Lorem ipfsdfssum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis repellat necessitatibus quidem mollitia enim nulla possimus, assumenda vitae esse pariatur voluptas, illo suscipit soluta temporibus autem facilis culpa? Eaque!
+    * code: necesita ser un string, se recibio ABC14NB5664gf
+    * price: necesita ser un numero, se recibio 2052
+    * stock: necesita ser un numero, se recibio 1565
+    * category: necesita ser un string, se recibio Basfdss
+    
+error: undefined
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio Lorem ipfsdfssum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis repellat necessitatibus quidem mollitia enim nulla possimus, assumenda vitae esse pariatur voluptas, illo suscipit soluta temporibus autem facilis culpa? Eaque!
+    * code: necesita ser un string, se recibio ABC14NB5664gf
+    * price: necesita ser un numero, se recibio 2052
+    * stock: necesita ser un numero, se recibio 1565
+    * category: necesita ser un string, se recibio Basfdss
+    
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio undefined
+    * code: necesita ser un string, se recibio undefined
+    * price: necesita ser un numero, se recibio undefined
+    * stock: necesita ser un numero, se recibio undefined
+    * category: necesita ser un string, se recibio undefined
+    
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio undefined
+    * code: necesita ser un string, se recibio undefined
+    * price: necesita ser un numero, se recibio undefined
+    * stock: necesita ser un numero, se recibio undefined
+    * category: necesita ser un string, se recibio undefined
+    
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio undefined
+    * code: necesita ser un string, se recibio undefined
+    * price: necesita ser un numero, se recibio undefined
+    * stock: necesita ser un numero, se recibio undefined
+    * category: necesita ser un string, se recibio undefined
+    
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio undefined
+    * code: necesita ser un string, se recibio undefined
+    * price: necesita ser un numero, se recibio undefined
+    * stock: necesita ser un numero, se recibio undefined
+    * category: necesita ser un string, se recibio undefined
+    
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio undefined
+    * code: necesita ser un string, se recibio undefined
+    * price: necesita ser un numero, se recibio undefined
+    * stock: necesita ser un numero, se recibio undefined
+    * category: necesita ser un string, se recibio undefined
+    
+error: Una o mas propiedades estaban incompletas o no eran validas.
+    Lista de propiedades requeridas:
+    * title: necesita ser un string, se recibio undefined
+    * description: necesita ser un string, se recibio undefined
+    * code: necesita ser un string, se recibio undefined
+    * price: necesita ser un numero, se recibio undefined
+    * stock: necesita ser un numero, se recibio undefined
+    * category: necesita ser un string, se recibio undefined
+    

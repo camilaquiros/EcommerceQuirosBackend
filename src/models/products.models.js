@@ -1,5 +1,4 @@
 import {Schema, model} from "mongoose";
-import paginate from 'mongoose-paginate-v2'
 
 //definir schemas
 const stringUniqueRequired = {
@@ -10,7 +9,7 @@ const stringUniqueRequired = {
 
 const stringRequired = {
     type: String,
-    required: true
+    required: true 
 }
 
 const productSchema = new Schema({
@@ -36,9 +35,9 @@ const productSchema = new Schema({
         required: true,
         index: true
     },
-    thumbnails: []
+    thumbnails: {
+        type: String
+    },
 })
-
-productSchema.plugin(paginate)
 
 export const productModel = model('products', productSchema)

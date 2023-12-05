@@ -1,0 +1,146 @@
+paths:
+  /api/products:
+    get:
+      summary: Obtener a todos los productos
+      tags:
+        - Products 
+      responses: 
+        '200':
+          description: Productos obtenidos satisfactoriamente
+          content: 
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/Product'
+        '404':
+          description: Error al buscar los productos en la base de datos
+        '500':
+          description: Error interno del servidor al obtener los productos
+    post: 
+      summary: Subir un nuevo producto a la base de datos
+      tags:
+        - Products
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Producto creado exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '400':
+          description: El código del producto ya existe en la base de datos
+        'CustomError':
+          description: El formulario no posee todos los datos del producto
+  /api/products/{id}:
+    get:
+      summary: Obtener un solo producto dado su id
+      tags:
+        - Products 
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $type: String
+          description: Id del producto a buscar
+      responses: 
+        '200':
+          description: Producto obtenido satisfactoriamente
+          content: 
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Product'
+        '404':
+          description: Error provocado por Id del producto inexistente
+        '500':
+          description: Error interno del servidor al obtener el producto
+    put:
+      summary: Modificar alguno o todos los datos de un producto
+      tags:
+        - Products
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $type: String
+          description: Id del producto a modificar
+      requestBody:
+            content:
+              application/json:
+                schema:
+                  items:
+                    $ref: '#/components/schemas/Product'
+      responses: 
+        '200':
+          description: Producto modificado satisfactoriamente
+        '404':
+          description: No se encontró el id del producto a modificar
+        '500':
+          description: Error interno del servidor al modificar el producto
+    delete:
+      summary: Eliminar un producto completamente de la base de datos
+      tags:
+        - Products
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            $type: String
+          description: Id del producto a eliminar
+      responses:
+        '404': 
+          description: No se encontró el id del producto a eliminar
+        '500': 
+          description: Error interno del servidor al eliminar el producto
+        
+components:
+  schemas:
+    Product:
+      type: object
+      properties: 
+        _id:
+          type: ObjectId
+          description: Id autogenerado de MongoDB
+        title:
+          type: String
+          description: Nombre del producto
+        description:
+          type: String
+          description: Descripcion del producto
+        code:
+          type: String
+          description: Código único del producto
+        price:
+          type: Number
+          description: Precio del producto
+        stock:
+          type: Number
+          description: Unidades disponibles del producto
+        category:
+          type: String
+          description: Categoria a la cual pertenece el producto
+        status:
+          type: Boolean
+          description: Indica si el producto esta disponible para venta o no
+        thumbnails:
+          type: Array
+          description: Colección de imágenes del producto
+      example:
+        _id: ObjectId('56fds454vds546')
+        title: Base de maquillaje
+        description: Lorem Ipsum
+        code: da6D516dDW48
+        price: 52
+        stock: 110
+        category: Rostro
+        status: true
+        thumbnails: [1.jpg, 2.jpg, 3.jpg]

@@ -52,7 +52,7 @@ Una vez finalizada la compra, el carrito asociado al usuario que compró deberá
      
 |Aspectos a evaluar|	Descripción	|
 | ------ | ------ |
-|Consigna|	Se profundizará sobre los roles de los usuarios, las autorizaciones y sobre la lógica de compra.Profesionalizar el servidor. Aplicar una arquitectura profesional para nuestro servidor. Aplicar prácticas como patrones de diseño, mailing, variables de entorno. etc. |	
+|Consigna|	Se profundizará sobre los roles de los usuarios, las autorizaciones y sobre la lógica de compra. Profesionalizar el servidor. Aplicar una arquitectura profesional para nuestro servidor. Aplicar prácticas como patrones de diseño, mailing, variables de entorno. etc. |	
 |Arquitectura|	El proyecto se encuentra separado por capas |
 |Persistencia|   El proyecto cuenta con DAO de archivos y DAO de MongoDB |
 |Seguridad| Los endpoints se encuentran protegidos por roles |

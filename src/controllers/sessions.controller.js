@@ -9,14 +9,24 @@ export const postLogin = async(req, res) => {
         if(!req.user) {
             return res.status(401).send({mensaje: "Invalidate user"})
         }
+        req.session.user = {
+            first_name: req.user.first_name,
+            last_name: req.user.last_name,
+            age: req.user.age,
+            email: req.user.email
+        }
         const token = generateToken(req.user)
         res.cookie('jwtCookie', token, {
             maxAge: 43200000
         }) 
-        res.redirect('api/products') 
+        res.status(200).send(req.user)
     } catch (error) {
         res.status(500).send({mensaje: `Error al iniciar sesion ${error}`})
     }
+}
+
+export const getCurrent = async(req, res) => {
+    res.send(req.user)
 }
 
 export const github = async(req, res) => {

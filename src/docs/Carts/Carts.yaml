@@ -1,0 +1,119 @@
+paths:
+  /api/carts/{cid}:
+    get:
+      summary: Obtener el carrito dado su id
+      tags: 0
+        - Carts 
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            $type: String
+          description: Id del carrito a buscar
+      responses: 
+        '200':
+          description: Carrito obtenido satisfactoriamente
+          content: 
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Cart'
+        '404':
+          description: Error provocado por Id del carrito inexistente
+        '500':
+          description: Error interno del servidor al obtener el carrito
+    delete:
+      summary: Vaciar un carrito
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            $type: String
+          description: Id del carrito a eliminar
+      responses:
+        '404': 
+          description: No se encontró el id del carrito a eliminar
+        '500': 
+          description: Error interno del servidor al eliminar el carrito
+  /api/carts/{cid}/products/{pid}:
+    put:
+      summary: Agregar un producto nuevo al carrito o cambiar la cantidad del mismo
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            $type: String
+          description: Id del carrito a modificar
+        - name: pid
+          in: path
+          required: true
+          schema:
+            $type: String
+          description: Id del producto a agregar o modificar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Cart'
+      responses:
+        '200':
+          description: Producto agregado o modificado satisfactoriamente
+        '400': 
+          description: La cantidad supera al stock actual
+    delete:
+      summary: Eliminar un producto del carrito
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            $type: String
+          description: Id del carrito a modificar
+        - name: pid
+          in: path
+          required: true
+          schema:
+            $type: String
+          description: Id del producto a agregar o modificar
+      responses:
+        '404':
+          description: No se encontró el producto en el carrito
+        '500':
+          description: Error interno del servidor al eliminar el producto del carrito     
+        
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado de MongoDB
+          example: ObjectId('56fds454vds546')
+        products:
+          type: array
+          items:
+            properties:
+              id_prod:
+                type: ObjectId
+                $ref: '#/components/schemas/Product'
+                description: Producto elegido
+                example: ObjectId('56fds45fds4vds546')
+              quantity:
+                type: Number
+                description: Cantidad elegida del producto para comprar
+                example: 10
+              _id:
+                type: ObjectId
+                description: Id autogenerado de MongoDB
+                example: ObjectId('56dw454vds546')
